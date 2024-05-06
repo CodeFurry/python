@@ -3,7 +3,7 @@ from sys import exit as closeApplication
 pygame.init()
 
 class rocketClass:
-	def __init__(self, size, dest, color, display):
+	def __init__(self, size: tuple, dest: tuple, color: tuple | str, display: pygame.surface.Surface):
 		self.image = pygame.Surface(size); self.image.fill(color)
 		self.rect = self.image.get_rect(midbottom = dest)
 		self.vector = pygame.math.Vector2()
