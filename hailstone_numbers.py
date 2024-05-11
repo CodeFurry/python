@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 counts = 0
 numbers = []
-number = eval(input("input number\n> "))
+number = eval(input("input number\n> ")) # to allow inputs like 128**128
 
 while True:
 	counts += 1
