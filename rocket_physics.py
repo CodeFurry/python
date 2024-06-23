@@ -3,11 +3,11 @@ from sys import exit as closeApplication
 pygame.init()
 
 class rocketClass:
-	def __init__(self, size: tuple, dest: tuple, color: tuple | str, display: pygame.surface.Surface):
+	def __init__(self, size: tuple, dest: tuple, color: tuple | str):
 		self.image = pygame.Surface(size); self.image.fill(color)
 		self.rect = self.image.get_rect(midbottom = dest)
 		self.vector = pygame.math.Vector2()
-		self.DISPLAY = display
+		self.DISPLAY = pg.display.get_surface()
 
 	def gravity(self):
 		self.vector.y += constant_g
@@ -33,7 +33,7 @@ class mainClass:
 	def __init__(self):
 		self.clock = pygame.time.Clock()
 		self.DISPLAY = pygame.display.set_mode((832, 664))
-		self.rocket = rocketClass((15, 100), (416, 664), "white", self.DISPLAY)
+		self.rocket = rocketClass((15, 100), (416, 664), "white")
 		self.font = pygame.font.SysFont(None, 25)
 
 	def display_info(self):
